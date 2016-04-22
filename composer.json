@@ -1,0 +1,26 @@
+{
+  "name": "xDump/xDump",
+  "type": "library",
+  "description": "Simple way to debug PHP variables",
+  "keywords": ["xDump", "debug", "x", "x_", "xd", "xd_"],
+  "homepage": "http://viniciusfesil.com",
+  "authors": [
+    {
+      "name": "Vinícius Feitosa da Silva",
+      "email": "viniciusfesil@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9"
+  },
+  "autoload": {
+    "files": [
+      "Resources/functions/x.php"
+    ],
+    "psr-4": { "Symfony\\Component\\VarDumper\\": "" },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "minimum-stability": "dev"
+}

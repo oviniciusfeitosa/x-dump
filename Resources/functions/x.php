@@ -11,7 +11,7 @@ if (!function_exists('x')) {
 
     function x($value) {
         $backtrace = debug_backtrace();
-        $objXDump = new xDump\GenericXDump($value, $backtrace, FALSE, FALSE);
-        $objXDump->debug();
+        $objXDump = new xDump\XDump($value, $backtrace, FALSE, FALSE);
+        $objXDump->output();
     }
 }
