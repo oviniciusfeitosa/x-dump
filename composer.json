@@ -13,13 +13,18 @@
   "require": {
     "php": ">=5.5.9"
   },
+  "require-dev": {
+    "phpunit/phpunit": "*"
+  },
   "autoload": {
+    "psr-4": {
+      "Component\\xDump\\": "src/Component/xDump"
+    },
     "files": [
-      "Resources/functions/x.php"
+      "src/resources/functions/xFunctions.php"
     ],
-    "psr-4": { "Symfony\\Component\\VarDumper\\": "" },
     "exclude-from-classmap": [
-      "/Tests/"
+      "/tests/"
     ]
   },
   "minimum-stability": "dev"
