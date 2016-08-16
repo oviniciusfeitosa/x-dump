@@ -26,6 +26,5 @@
     "exclude-from-classmap": [
       "/tests/"
     ]
-  },
-  "minimum-stability": "dev"
+  }
 }
