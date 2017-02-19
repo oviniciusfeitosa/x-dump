@@ -2,6 +2,7 @@
   "name": "vinnyfs89/xDump",
   "type": "library",
   "description": "Simple way to debug PHP variables",
+  "license": "MIT",
   "keywords": ["xDump", "debug", "x", "x_", "xd", "xd_"],
   "homepage": "http://viniciusfesil.com",
   "authors": [
