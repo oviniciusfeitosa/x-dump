@@ -10,7 +10,7 @@ The xDump component provides a simple and effective way of knowing which one or 
 
 Require x-dump cli
 ```sh
-composer require "vinnyfs89/x-dump":dev-master
+composer require "vinnyfs89/x-dump":"dev-master"
 ```
 
 Or clone this project directly or set in your composer.json, like this:
