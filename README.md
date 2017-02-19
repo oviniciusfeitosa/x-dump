@@ -8,17 +8,16 @@ The xDump component provides a simple and effective way of knowing which one or 
 
 ##Install
 
-you may clone this project directly or set in your composer.json, like this:
+Require x-dump cli
+```sh
+composer require "vinnyfs89/x-dump":dev-master
+```
+
+Or clone this project directly or set in your composer.json, like this:
 
 ```json
-  "repositories": [
-    {
-      "type": "vcs",
-      "url":  "https://github.com/vinnyfs89/xDump"
-    }
-  ],
   "require-dev": {
-    "vinnyfs89/xDump": "dev-master"
+    "vinnyfs89/x-dump": "dev-master"
   },
 ```
 ##Usage
