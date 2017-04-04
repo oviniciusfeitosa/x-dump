@@ -18,12 +18,14 @@ class XDump
     private $hasExecutionStopped;
     private $hasDetails;
     private $outputMode;
+    private $hasBacktraceShowed;
 
     public function __construct(
         $value
         , $arrBacktrace
-        , $hasExecutionStopped = FALSE
-        , $hasDetails = FALSE
+        , $hasExecutionStopped = false
+        , $hasDetails = false
+        , $hasBacktraceShowed = true
         , $outputMode = XDump::OUTPUT_MODE_HTML
     )
     {
@@ -32,18 +34,17 @@ class XDump
         $this->hasExecutionStopped = $hasExecutionStopped;
         $this->hasDetails = $hasDetails;
         $this->outputMode = $outputMode;
-
-
+        $this->hasBacktraceShowed = $hasBacktraceShowed;
     }
 
     public function output()
     {
         switch ($this->outputMode) {
             case XDump::OUTPUT_MODE_HTML:
-                $this->outputAsHTML();
+                echo $this->outputAsHTML();
                 break;
             case XDump::OUTPUT_MODE_CLI:
-                $this->outputAsCLI();
+                echo $this->outputAsCLI();
                 break;
         }
         if ($this->hasExecutionStopped) {
@@ -51,7 +52,8 @@ class XDump
         }
     }
 
-    private function outputAsHTML() {
+    private function outputAsHTML()
+    {
         $dump = '<div style="text-align:left">';
         $dump .= '<pre>';
         $dump .= '<div style="background:lightgray; color:black;">';
@@ -69,18 +71,20 @@ class XDump
             ob_end_clean();
             $dump .= '</div>';
         }
-
-        foreach ($this->arrBacktrace as $backtrace) {
-            $line = isset($backtrace['line']) ? $backtrace['line'] : "";
-            $file = isset($backtrace['file']) ? $backtrace['file'] : "";
-            $dump .= "<div style='background:brown; color:white; border: 1px solid black'>[Line] {$line} {$file}</div>";
-            $dump .= "<div style='background:black; color:white; border: 1px solid black'> {$backtrace['function']}</div>";
+        if ($this->hasBacktraceShowed) {
+            foreach ($this->arrBacktrace as $backtrace) {
+                $line = isset($backtrace['line']) ? $backtrace['line'] : "";
+                $file = isset($backtrace['file']) ? $backtrace['file'] : "";
+                $dump .= "<div style='background:brown; color:white; border: 1px solid black'>[Line] {$line} {$file}</div>";
+                $dump .= "<div style='background:black; color:white; border: 1px solid black'> {$backtrace['function']}</div>";
+            }
         }
 
-        echo $dump;
+        return $dump;
     }
 
-    private function outputAsCLI() {
+    private function outputAsCLI()
+    {
         $dump = '\n ==================================';
         $spaces = '    ';
         foreach ($this->arrBacktrace[0]['args'] as $index => $value) {
@@ -98,7 +102,7 @@ class XDump
             $dump .= "\n {$spaces} ---------------";
         }
 
-        if($this->arrBacktrace) {
+        if ($this->hasBacktraceShowed) {
             $dump .= "\n {$spaces} '-> [ BACKTRACE ] ---------------";
             foreach ($this->arrBacktrace as $backtrace) {
                 $line = isset($backtrace['line']) ? $backtrace['line'] : "";
@@ -107,9 +111,9 @@ class XDump
                 $dump .= "\n {$spaces} '------->  {$backtrace['function']}";
             }
         }
-        $dump = '\n ==================================';
+        $dump .= '\n ==================================';
 
-        echo $dump;
+        return $dump;
     }
 
 }
