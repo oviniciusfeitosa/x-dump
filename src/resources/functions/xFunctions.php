@@ -12,11 +12,12 @@ if (!function_exists('x')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            false,
-            true
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -28,11 +29,12 @@ if (!function_exists('xnb')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            false,
-            false
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -49,6 +51,10 @@ if (!function_exists('xd_')) {
             true,
             true
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -66,6 +72,10 @@ if (!function_exists('xdnb_')) {
             true,
             false
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -78,12 +88,12 @@ if (!function_exists('xd')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            true,
-            false,
-            $outputMode,
-            true
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -96,11 +106,12 @@ if (!function_exists('xdnb')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            true,
-            false,
-            false
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -112,11 +123,12 @@ if (!function_exists('x_')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            true,
-            true
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -128,11 +140,12 @@ if (!function_exists('xnb_')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            true,
-            false
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_HTML;
         $objXDump->output();
     }
 }
@@ -144,12 +157,12 @@ if (!function_exists('xcli')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            false,
-            true,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -161,12 +174,12 @@ if (!function_exists('xnbcli')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            false,
-            false,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -179,12 +192,12 @@ if (!function_exists('xdcli_')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            true,
-            true,
-            true,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -197,12 +210,12 @@ if (!function_exists('xdnbcli_')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            true,
-            true,
-            false,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -215,12 +228,12 @@ if (!function_exists('xdcli')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            true,
-            false,
-            true,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -233,12 +246,12 @@ if (!function_exists('xdnbcli')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            true,
-            false,
-            false,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = true;
+        $objXDump->hasDetails = false;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -250,12 +263,12 @@ if (!function_exists('xcli_')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            true,
-            true,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = true;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }
@@ -267,12 +280,12 @@ if (!function_exists('xnbcli_')) {
         $backtrace = debug_backtrace();
         $objXDump = new \Component\xDump\XDump(
             $value,
-            $backtrace,
-            false,
-            true,
-            false,
-            \Component\xDump\XDump::OUTPUT_MODE_CLI
+            $backtrace
         );
+        $objXDump->hasExecutionStopped = false;
+        $objXDump->hasDetails = true;
+        $objXDump->hasBacktraceShowed = false;
+        $objXDump->outputMode = \Component\xDump\XDump::OUTPUT_MODE_CLI;
         $objXDump->output();
     }
 }

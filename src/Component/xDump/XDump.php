@@ -15,26 +15,15 @@ class XDump
 
     private $value;
     private $arrBacktrace;
-    private $hasExecutionStopped;
-    private $hasDetails;
-    private $outputMode;
-    private $hasBacktraceShowed;
+    public $hasExecutionStopped = false;
+    public $hasDetails = false;
+    public $hasBacktraceShowed = true;
+    public $outputMode = XDump::OUTPUT_MODE_HTML;
 
-    public function __construct(
-        $value
-        , $arrBacktrace
-        , $hasExecutionStopped = false
-        , $hasDetails = false
-        , $hasBacktraceShowed = true
-        , $outputMode = XDump::OUTPUT_MODE_HTML
-    )
+    public function __construct($value, $arrBacktrace)
     {
         $this->value = $value;
         $this->arrBacktrace = $arrBacktrace;
-        $this->hasExecutionStopped = $hasExecutionStopped;
-        $this->hasDetails = $hasDetails;
-        $this->outputMode = $outputMode;
-        $this->hasBacktraceShowed = $hasBacktraceShowed;
     }
 
     public function output()
