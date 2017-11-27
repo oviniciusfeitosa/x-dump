@@ -1,12 +1,12 @@
 xDump
 =====
 
-##About
+## About
 
 
 The xDump component provides a simple and effective way of knowing which one or more reported values represent, with HTML Output. Basically represented by the functions "x", "x_", "xd" and "xd_", the component provides that the files that were covered so that the application reaches the function.
 
-##Install
+## Install
 
 Require x-dump cli
 ```sh
