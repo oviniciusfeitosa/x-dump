@@ -48,7 +48,7 @@ The functions `x_()` and `xd_()` do the same `x()` and `xd()` respectively, but 
 **Examples**
 
 ```php
-x_ $param1 [, $param2, ...])
+x_ ($param1 [, $param2, ...])
 ```
 ```php
 xd_($param1 [, $param2, ...])
