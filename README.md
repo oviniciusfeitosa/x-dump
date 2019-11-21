@@ -36,8 +36,8 @@ xd($param1 [, $param2, ...])
 The functions `x_()` and `xd_()` do the same `x()` and `xd()` respectively, but make the details of one or more informed values using "var_dump" behind the scenes.
 
 ```php
-x_ ($param1 [, $param2, ...])
-xd_ ($param1 [, $param2, ...])
+x_ $param1 [, $param2, ...])
+xd_($param1 [, $param2, ...])
 ```
 
 Enjoy!
