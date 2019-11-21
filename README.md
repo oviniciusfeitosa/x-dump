@@ -21,7 +21,7 @@ You can also clone this project directly or set in your `composer.json`, like th
 ```json
   "require-dev": {
     "vinnyfs89/x-dump": "dev-master"
-  },
+  }
 ```
 
 ## How to use?
