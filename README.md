@@ -9,7 +9,7 @@ The xDump component provides a simple and effective way of knowing which one or 
 ## Install
 
 Require x-dump cli
-```sh
+```console
 composer require "vinnyfs89/x-dump":"dev-master"
 ```
 
@@ -20,20 +20,20 @@ Or clone this project directly or set in your composer.json, like this:
     "vinnyfs89/x-dump": "dev-master"
   },
 ```
-##Usage
+## How to use?
 
-The functions "x" and "xd" differ because the "x" does not prevent the execution of the application, since the "xd" stop the application. But both do not make the details of one or more informed values.
+The functions `x` and `xd` differ because the "x" does not prevent the execution of the application, since the "xd" stop the application. But both do not make the details of one or more informed values.
 
 ```php
-x($ param1 [, $ param2, ...])
-xd($ param1 [, $ param2, ...])
+x($param1 [, $param2, ...])
+xd($param1 [, $param2, ...])
 ```
 
-For the functions "x_" and "xd_" do the same "x" and "xd" respectively, but make the details of one or more informed values.
+The functions `x_()` and `xd_()` do the same `x()` and `xd()` respectively, but make the details of one or more informed values using "var_dump" behind the scenes.
 
 ```php
-x_ ($ param1 [, $ param2, ...])
-xd_ ($ param1 [, $ param2, ...])
+x_ ($param1 [, $param2, ...])
+xd_ ($param1 [, $param2, ...])
 ```
 
 Enjoy!
