@@ -4,7 +4,7 @@
   "description": "Simple way to debug PHP variables",
   "license": "MIT",
   "keywords": ["x-dump", "debug", "x", "x_", "xd", "xd_"],
-  "homepage": "http://viniciusfesil.com",
+  "homepage": "http://vinnyfs89.github.io/x-dump",
   "authors": [
     {
       "name": "Vinícius Feitosa da Silva",
