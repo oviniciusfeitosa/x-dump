@@ -17,7 +17,7 @@ This code was created by members of the [PHP-DF](https://phpdf.org.br) community
 To have x-dump installed run the command below
 
 ```console
-composer require vinnyfs89/x-dump
+composer require "vinnyfs89/x-dump":"dev-master"
 ```
 
 ### Alternative installation
