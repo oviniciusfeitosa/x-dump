@@ -1,3 +1,5 @@
+![thumb-image](./src/x-dump-logo-192x192.png)
+
 x-dump
 =====
 
@@ -43,10 +45,6 @@ The functions `x_()` and `xd_()` do the same `x()` and `xd()` respectively, but 
 x_ $param1 [, $param2, ...])
 xd_($param1 [, $param2, ...])
 ```
-
-Enjoy!
-:D
-
 
 :octocat: :smiley: :zap:
 
