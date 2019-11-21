@@ -1,25 +1,29 @@
 xDump
 =====
 
-## About
+**xDump** means E**x**treme**D**ump. With this repository you can debug your code allowing you to have all the traceability where it was passed, enabling you to do it quickly and effectively.
 
-
-The xDump component provides a simple and effective way of knowing which one or more reported values represent, with HTML Output. Basically represented by the functions "x", "x_", "xd" and "xd_", the component provides that the files that were covered so that the application reaches the function.
+Functions like `x` and `xd` are provided, for example to make debugging your code easier
+by the functions , the component provides that the files that were covered so that the application reaches the function.
 
 ## Install
 
-Require x-dump cli
+To have x-dump installed run the command below
+
 ```console
-composer require "vinnyfs89/x-dump":"dev-master"
+composer require vinnyfs89/x-dump
 ```
 
-Or clone this project directly or set in your composer.json, like this:
+### Alternatives
+
+You can also clone this project directly or set in your `composer.json`, like this:
 
 ```json
   "require-dev": {
     "vinnyfs89/x-dump": "dev-master"
   },
 ```
+
 ## How to use?
 
 The functions `x` and `xd` differ because the "x" does not prevent the execution of the application, since the "xd" stop the application. But both do not make the details of one or more informed values.
@@ -38,3 +42,7 @@ xd_ ($param1 [, $param2, ...])
 
 Enjoy!
 :D
+
+### References
+- [CMC](https://github.com/devbrotherhood/cmc)
+- [debug_backtrace](https://www.php.net/manual/pt_BR/function.debug-backtrace.php)
