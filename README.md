@@ -1,7 +1,7 @@
-xDump
+x-dump
 =====
 
-**xDump** means E**x**treme**D**ump. With this repository you can debug your code allowing you to have all the traceability where it was passed, enabling you to do it quickly and effectively.
+**x-dump** means E**x**treme-**D**ump. With this repository you can debug your code allowing you to have all the traceability where it was passed, enabling you to do it quickly and effectively.
 
 Functions like `x` and `xd` are provided, for example to make debugging your code easier
 by the functions , the component provides that the files that were covered so that the application reaches the function.
