@@ -34,15 +34,23 @@ You can also clone this project directly or set in your `composer.json`, like th
 
 The functions `x` and `xd` differ because the "x" does not prevent the execution of the application, since the "xd" stop the application. But both do not make the details of one or more informed values.
 
+**Examples**
 ```php
 x($param1 [, $param2, ...])
+```
+ 
+```php
 xd($param1 [, $param2, ...])
 ```
 
 The functions `x_()` and `xd_()` do the same `x()` and `xd()` respectively, but make the details of one or more informed values using "var_dump" behind the scenes.
 
+**Examples**
+
 ```php
 x_ $param1 [, $param2, ...])
+```
+```php
 xd_($param1 [, $param2, ...])
 ```
 
