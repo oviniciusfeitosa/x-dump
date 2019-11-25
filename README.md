@@ -8,9 +8,11 @@ x-dump
 Functions like `x` and `xd` are provided, for example to make debugging your code easier
 by the functions , the component provides that the files that were covered so that the application reaches the function.
 
-## About
-
 This code was created by members of the [PHP-DF](https://phpdf.org.br) community and is open for contributions.
+
+## Requirements
+
+- PHP 5.3^
 
 ## Install
 
