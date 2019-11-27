@@ -60,7 +60,6 @@ xd_($param1 [, $param2, ...])
 
 ### References
 - [PHP-DF](https://phpdf.org.br)
-- [CMC](https://github.com/devbrotherhood/cmc)
 - [debug_backtrace](https://www.php.net/manual/pt_BR/function.debug-backtrace.php)
 - [PHP](http://php.net)
 - [Commit Messages Convention (CMC)](https://github.com/devbrotherhood/cmc)
