@@ -1,17 +1,11 @@
 <?php
-/**
- * @author Vinicius Feitosa da Silva <viniciusfesil@gmail.com>
- * Date: 22/04/2016
- * Time: 13:09
- */
 
 namespace Component\xDump;
 
 class XDump
 {
-
-    const OUTPUT_MODE_HTML = 0;
-    const OUTPUT_MODE_CLI = 1;
+    const int OUTPUT_MODE_HTML = 0;
+    const int OUTPUT_MODE_CLI = 1;
 
     private $value;
     private $arrBacktrace;
@@ -29,10 +23,10 @@ class XDump
     public function output()
     {
         switch ($this->outputMode) {
-            case XDump::OUTPUT_MODE_HTML:
+            case self::OUTPUT_MODE_HTML:
                 echo $this->outputAsHTML();
                 break;
-            case XDump::OUTPUT_MODE_CLI:
+            case self::OUTPUT_MODE_CLI:
                 echo $this->outputAsCLI();
                 break;
         }
@@ -41,25 +35,35 @@ class XDump
         }
     }
 
+    private function _showContent($index, $value)
+    {
+        $content = "<div style='border: 1px solid black'>[Value " . ($index + 1) . "]</div>";
+        $content .= "<div style='background:black; color:white; border: 1px solid black'>";
+        ob_start();
+        if ($this->hasDetails) {
+            var_dump($value);
+        } else {
+            print_r($value);
+        }
+        $content .= ob_get_contents();
+        ob_end_clean();
+        $content .= '</div>';
+
+        return $content;
+    }
+
     private function outputAsHTML()
     {
-        $dump = '<div style="text-align:left">';
-        $dump .= '<pre>';
+        $dump = '<pre>';
         $dump .= '<div style="background:lightgray; color:black;">';
-
+        
         foreach ($this->arrBacktrace[0]['args'] as $index => $value) {
-            $dump .= "<div style='border: 1px solid black'>[Value " . ($index + 1) . "]</div>";
-            $dump .= "<div style='background:black; color:white; border: 1px solid black'>";
-            ob_start();
-            if ($this->hasDetails) {
-                var_dump($value);
-            } else {
-                print_r($value);
-            }
-            $dump .= ob_get_contents();
-            ob_end_clean();
-            $dump .= '</div>';
+            
+            $dump .= $this->_showContent($index, $value);
+            
+            
         }
+
         if ($this->hasBacktraceShowed) {
             foreach ($this->arrBacktrace as $backtrace) {
                 $line = isset($backtrace['line']) ? $backtrace['line'] : "";
@@ -69,6 +73,8 @@ class XDump
             }
         }
 
+        $dump .= '</pre>';
+        
         return $dump;
     }
 
