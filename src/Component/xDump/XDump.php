@@ -4,8 +4,8 @@ namespace Component\xDump;
 
 class XDump
 {
-    const int OUTPUT_MODE_HTML = 0;
-    const int OUTPUT_MODE_CLI = 1;
+    const OUTPUT_MODE_HTML = 0;
+    const OUTPUT_MODE_CLI = 1;
 
     private $value;
     private $arrBacktrace;
@@ -56,25 +56,22 @@ class XDump
     {
         $dump = '<pre>';
         $dump .= '<div style="background:lightgray; color:black;">';
-        
+
         foreach ($this->arrBacktrace[0]['args'] as $index => $value) {
-            
             $dump .= $this->_showContent($index, $value);
-            
-            
         }
 
         if ($this->hasBacktraceShowed) {
             foreach ($this->arrBacktrace as $backtrace) {
-                $line = isset($backtrace['line']) ? $backtrace['line'] : "";
-                $file = isset($backtrace['file']) ? $backtrace['file'] : "";
-                $dump .= "<div style='background:brown; color:white; border: 1px solid black'>[Line] {$line} {$file}</div>";
-                $dump .= "<div style='background:black; color:white; border: 1px solid black'> {$backtrace['function']}</div>";
+                if (!empty($backtrace['line']) && !empty($backtrace['line']) && !empty($backtrace['line'])) {
+                    $dump .= "<div style='background:brown; color:white; border: 1px solid black'>[Line] {$backtrace['line']} {$backtrace['file']}</div>";
+                    $dump .= "<code style='background:black; color:white; border: 1px solid black'>{$backtrace['function']}</code>";
+                }
             }
         }
 
         $dump .= '</pre>';
-        
+
         return $dump;
     }
 
@@ -110,5 +107,4 @@ class XDump
 
         return $dump;
     }
-
 }

@@ -1,7 +1,8 @@
+<div align="center"> 
 ![thumb-image](./src/x-dump-logo-192x192.png)
+</div>
 
-x-dump
-=====
+# x-dump
 
 **x-dump** means E**x**treme-**D**ump. With this repository you can debug your **PHP** code allowing you to have all the traceability where it was passed, enabling you to do it quickly and effectively.
 
@@ -36,6 +37,8 @@ You can also clone this project directly or set in your `composer.json`, like th
 
 The functions `x` and `xd` differ because the "x" does not prevent the execution of the application, since the "xd" stop the application. But both do not make the details of one or more informed values.
 
+## Examples
+
 **Examples**
 ```php
 x($param1 [, $param2, ...])
@@ -56,9 +59,16 @@ x_($param1 [, $param2, ...])
 xd_($param1 [, $param2, ...])
 ```
 
+For more examples use the command below by accessing http://localhost:8000.
+
+```sh
+php -S localhost:8000 -t public
+```
+
 :octocat: :smiley: :zap:
 
 ### References
+
 - [PHP-DF](https://phpdf.org.br)
 - [debug_backtrace](https://www.php.net/manual/pt_BR/function.debug-backtrace.php)
 - [PHP](http://php.net)

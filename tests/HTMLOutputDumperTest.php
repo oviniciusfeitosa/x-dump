@@ -1,29 +1,25 @@
 <?php
 
-use Component\xDump\Test;
+use PHPUnit\Framework\TestCase;
 
-class HTMLOutputDumperTest extends PHPUnit_Framework_TestCase
+class HTMLOutputDumperTest extends TestCase
 {
 
-    public function parameters(...$parameters)
-    {
-    }
-
-    public function testXFunction()
+    public function testXFunctionsWorking()
     {
         ob_start();
         x(1);
         $content = ob_get_contents();
         ob_end_clean();
-        $this->assertNotNull($content, "xd function not working.");
+        $this->assertNotEmpty($content, "xd function not working.");
     }
 
-    public function testX_Function()
+    public function testX_FunctionWorking()
     {
         ob_start();
         x_(1);
         $content = ob_get_contents();
         ob_end_clean();
-        $this->assertNotNull($content, "xd function not working.");
+        $this->assertNotEmpty($content, "xd function not working.");
     }
 }

@@ -1,9 +1,4 @@
 <?php
-/**
- * @author Vinicius Feitosa da Silva <viniciusfesil@gmail.com>
- * Date: 22/04/2016
- * Time: 12:54
- */
 
 if (!function_exists('x')) {
 
